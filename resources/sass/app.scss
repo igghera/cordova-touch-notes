@@ -1,0 +1,66 @@
+// The following two lines import the default Sencha Touch theme. If you are building
+// a new theme, remove them and the add your own CSS on top of the base CSS (which
+// is already included in your app.json file).
+
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/all';
+
+// @import 'sencha-touch/base';
+// @import 'sencha-touch/base/all';
+
+// @import 'sencha-touch/bb10';
+// @import 'sencha-touch/bb10/all';
+
+// @import 'sencha-touch/windows';
+// @import 'sencha-touch/windows/all';
+
+// Custom code goes here..
+
+// Examples of using the icon mixin:
+// @include icon('user');
+// @include icon('add;');
+
+/* Increase height of list item so title and narrative lines fit */
+.x-list .x-list-item .x-list-item-label
+{
+     min-height: 3.5em!important;
+}
+
+.x-list .x-list-item.x-list-item-tpl .x-innerhtml {
+    padding: 2px 10px;
+}
+
+.list-item-title
+{
+    float:left;
+    width:100%;
+    font-size:90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right:25px;
+    line-height:150%;
+}
+.list-item-narrative
+{
+    float:left;
+    width:95%;
+    color:#666666;
+    font-size:80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right:25px;
+}
+.x-item-selected .list-item-title
+{
+    color:#ffffff;
+}
+.x-item-selected .list-item-narrative
+{
+    color:#ffffff;
+}
+.notes-list-empty-text
+{
+    padding:10px;
+}
