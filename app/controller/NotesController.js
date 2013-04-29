@@ -25,12 +25,12 @@ Ext.define('sencha-cordova.controller.NotesController', {
     onNewNoteCommand: function () {
         console.log('[NotesController] Handling onNewNoteCommand');
 
-        var now = new Date();
-        var noteId = (now.getTime()).toString() + (this.getRandomInt(0, 100)).toString();
+        var now = new Date().getTime();
+        var noteId = now.toString() + (this.getRandomInt(0, 100)).toString();
 
         var newNote = Ext.create('sencha-cordova.model.Note', {
             id: noteId,
-            dateCreated: now,
+            dateCreated: new Date(now).toDateString(),
             title: '',
             narrative: ''
         });
@@ -108,14 +108,14 @@ Ext.define('sencha-cordova.controller.NotesController', {
     },
 
     onEditorActivateCommand: function() {
-        // console.log('[NotesController] Handling onEditorActivateCommand');
+        console.log('[NotesController] Handling onEditorActivateCommand');
 
-        // var currentNote = this.getNoteEditor().getRecord();
+        var currentNote = this.getNoteEditor().getRecord();
 
-        // if(currentNote.get('title') == '')
-        //     Ext.fly('deleteNoteBtn').hide();
-        // else
-        //     Ext.fly('deleteNoteBtn').show();
+        if(currentNote.get('title') == '')
+            Ext.fly('deleteNoteBtn').hide();
+        else
+            Ext.fly('deleteNoteBtn').show();
     },
 
     //Helper functions

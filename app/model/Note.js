@@ -1,13 +1,19 @@
 Ext.define('sencha-cordova.model.Note', {
     extend: 'Ext.data.Model',
 
+    requires: "sencha-cordova.proxy.CordovaStorageProxy",
+
     config: {
 
         idProperty: 'id',
 
+        proxy: {
+            type: 'cordovastorageproxy'
+        },
+
         fields: [
             { name: 'id', type: 'int' },
-            { name: 'dateCreated', type: 'date', dateFormat: 'c' },
+            { name: 'dateCreated', type: 'string' },
             { name: 'title', type: 'string' },
             { name: 'narrative', type: 'string' }
         ],
